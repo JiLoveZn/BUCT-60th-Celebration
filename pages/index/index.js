@@ -11,7 +11,7 @@ Page({
   },
   enter:function(){
     wx.navigateTo({
-      url: '../main_page/main_page',
+      url: '../registration/registration',
     })
   },
   //事件处理函数

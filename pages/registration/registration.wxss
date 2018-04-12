@@ -1,0 +1,81 @@
+/* pages/registration/registration.wxss */
+page {
+  height:100%;
+  }
+
+#container {
+  height: 100%;
+  width: 100%;
+}
+
+#background {
+  height: 100%;
+  width: 100%;
+  background-color: #c49130;
+  display: flex;
+  justify-content: center;
+  // background-image: url('../../src/registration_bg.png')
+}
+#form {
+  width: 70%;
+  margin-top: 50%;
+}
+#school_info {
+  width: 100%;
+  color: #fff;
+  font-size: 40rpx;
+}
+#personal_info {
+  width: 100%;
+  color: #fff;
+  font-size: 40rpx;
+  margin-top: 150rpx;
+}
+
+.title-input {
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10rpx;
+}
+.picker {
+  background-color: #ccc;
+  opacity:0.7;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  
+}
+.picker_bg {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.picker_style {
+  width: 60%;
+  margin-left: 40rpx;
+}
+.input_text {
+  margin-left: 60rpx;
+}
+.input_style {
+  width: 60%;
+  margin-left: 40rpx;
+  background-color: #ccc;
+  opacity:0.7;
+  height: 60rpx;
+  font-size: 40rpx;
+  border-radius: 10rpx;
+}
+#submit {
+  background-color: #c01a20;
+  border-radius: 10rpx;
+  border-width: 5rpx;
+  border-style: solid;
+  border-color: #fff;
+  font-size: 40rpx;
+  color: #fff;
+  margin-top: 50rpx;
+}
