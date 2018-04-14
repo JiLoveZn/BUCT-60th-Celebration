@@ -21,7 +21,7 @@ Page({
         name: '化工系'
       },
     ],
-    class: ['无机5801', '无机5802', '化工5805',],
+    class_number: ['无机5801', '无机5802', '化工5805',],
     objectArray: [
       {
         id: 0,
@@ -44,6 +44,12 @@ Page({
     name: '姓名',
     photo: '照片',
     finish: '完成注册',
+  },
+  formSubmit: function (e) {
+    wx.navigateTo({
+      url: '../first_page/first_page',
+    });
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
   
   /**
@@ -102,16 +108,19 @@ Page({
   
   },
   bindDateChange: function (e) {
+    console.log('选择了'+e.detail.value);
     this.setData({
       date: e.detail.value
     })
   },
-  bindPickerChange: function (e) {
+  bindSchoolChange: function (e) {
+    console.log('index_1选择了' + e.detail.value);
     this.setData({
       index_1: e.detail.value
     })
   },
-  bindPickerChange: function (e) {
+  bindClassChange: function (e) {
+    console.log('index_2选择了' + e.detail.value);
     this.setData({
       index_2: e.detail.value
     })

@@ -1,11 +1,11 @@
 <!--pages/registration/registration.wxml-->
 <view id='container'>
   <view id='background'>
-    <form id='form'>
+    <form id='form' bindsubmit="formSubmit">
       <view id='school_info'>
         <view class='title-input'>
           <text class='title-text'>{{enroll_time}}</text>
-          <picker class='picker_style' mode="date" bindchange="bindDateChange" value="{{date}}" fields="year" start="1958" end="2014">
+          <picker name='enroll_time' class='picker_style' mode="date" bindchange="bindDateChange" value="{{date}}" fields="year" start="1958" end="2014">
             <view class='picker'>
               <text class='input_text'>{{date}}年</text>
               <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
@@ -14,7 +14,7 @@
         </view>
         <view class='title-input'>
           <text class='title-text'>{{school_name}}</text>
-          <picker class='picker_style' mode="selector" bindchange="bindPickerChange" value="{{index_1}}" range="{{school}}">
+          <picker name='school_name' class='picker_style' mode="selector" bindchange="bindSchoolChange" value="{{index_1}}" range="{{school}}">
             <view class='picker'>
               <text class='input_text'>{{school[index_1]}}</text>
               <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
@@ -23,9 +23,9 @@
         </view>
         <view class='title-input'>
           <text class='title-text'>{{class_name}}</text>
-          <picker class='picker_style' mode="selector" bindchange="bindPickerChange" value="{{index_2}}" range="{{class}}">
+          <picker name='class_number' class='picker_style' mode="selector" bindchange="bindClassChange" value="{{index_2}}" range="{{class_number}}">
             <view class='picker'>
-              <text class='input_text'>{{class[index_2]}}</text>
+              <text class='input_text'>{{class_number[index_2]}}</text>
               <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
             </view>
           </picker>
@@ -34,14 +34,14 @@
       <view id='personal_info'>
         <view class='title-input'>
           <text class='title-text'>{{name}}</text>
-          <input class='input_style'></input>
+          <input name='name' class='input_style'></input>
         </view>
         <view class='title-input'>
           <text class='title-text'>{{photo}}</text>
-          <input class='input_style'></input>
+          <input name='photo' class='input_style'></input>
         </view>
       </view>
-      <button id='submit' formType="submit">{{finish}}</button>
+      <button id='submit' formType="submit" >{{finish}}</button>
     </form>
   </view>
 </view>
