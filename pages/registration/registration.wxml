@@ -1,0 +1,47 @@
+<!--pages/registration/registration.wxml-->
+<view id='container'>
+  <view id='background'>
+    <form id='form' bindsubmit="formSubmit">
+      <view id='school_info'>
+        <view class='title-input'>
+          <text class='title-text'>{{enroll_time}}</text>
+          <picker name='enroll_time' class='picker_style' mode="date" bindchange="bindDateChange" value="{{date}}" fields="year" start="1958" end="2014">
+            <view class='picker'>
+              <text class='input_text'>{{date}}年</text>
+              <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
+            </view>
+          </picker>
+        </view>
+        <view class='title-input'>
+          <text class='title-text'>{{school_name}}</text>
+          <picker name='school_name' class='picker_style' mode="selector" bindchange="bindSchoolChange" value="{{index_1}}" range="{{school}}">
+            <view class='picker'>
+              <text class='input_text'>{{school[index_1]}}</text>
+              <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
+            </view>
+          </picker>
+        </view>
+        <view class='title-input'>
+          <text class='title-text'>{{class_name}}</text>
+          <picker name='class_number' class='picker_style' mode="selector" bindchange="bindClassChange" value="{{index_2}}" range="{{class_number}}">
+            <view class='picker'>
+              <text class='input_text'>{{class_number[index_2]}}</text>
+              <image class='picker_bg' mode='aspectFit' src='../../src/select.png'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view id='personal_info'>
+        <view class='title-input'>
+          <text class='title-text'>{{name}}</text>
+          <input name='name' class='input_style'></input>
+        </view>
+        <view class='title-input'>
+          <text class='title-text'>{{photo}}</text>
+          <input name='photo' class='input_style'></input>
+        </view>
+      </view>
+      <button id='submit' formType="submit" >{{finish}}</button>
+    </form>
+  </view>
+</view>

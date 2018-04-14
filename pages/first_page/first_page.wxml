@@ -1,0 +1,16 @@
+<!--pages/first_page/first_page.wxml-->
+<image id='upper_half' src='../../src/first_page_up.jpg' mode='scaleToFill'>
+  <cover-image id='gear' src='../../src/gear.png' mode='aspectFit'></cover-image>
+</image>
+<view class='btn_area'>
+  <view class='row'>
+    <image bindtap="testimg" class='image_button' src='../../src/info_distr.png' mode='aspectFit'></image>
+    <image class='image_button' src='../../src/time_beam.png' mode='aspectFit'></image>
+    <image class='image_button' src='../../src/support.png' mode='aspectFit'></image>
+  </view>
+  <view class='row'>
+    <image class='image_button' src='../../src/aluminum.png' mode='aspectFit'></image>
+    <image class='image_button' src='../../src/return_service.png' mode='aspectFit'></image>
+    <image class='image_button' src='../../src/welcome_back.png' mode='aspectFit'></image>
+  </view>
+</view>
