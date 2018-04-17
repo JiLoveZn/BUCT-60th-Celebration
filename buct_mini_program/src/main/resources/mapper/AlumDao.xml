@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miniprograms.buct_mini_program.dao.AlumDao">
+    <select id="queryAlumByWxId" resultType="com.miniprograms.buct_mini_program.entity.Alum">
+        SELECT alum_name, start_year, department, class_no, photo_url
+        FROM tb_alum
+        WHERE
+        wx_id=#{wxId}
+    </select>
+    <insert id="insertAlum" parameterType="com.miniprograms.buct_mini_program.entity.Alum">
+        INSERT INTO
+        tb_alum(wx_id, alum_name, start_year,
+        department, class_no, photo_url)
+        VALUES
+        (#{wxId}, #{alumName}, #{startYear},
+         #{department}, #{classNo}, #{photoUrl})
+    </insert>
+    <update id="updateAlum" parameterType="com.miniprograms.buct_mini_program.entity.Alum">
+        UPDATE tb_alum
+        <set>
+            <if test="alumName!=null">alum_name=#{alumName}</if>
+            <if test="startYear!=null">start_year=#{startYear}</if>
+            <if test="department!=null">department=#{department}</if>
+            <if test="classNo!=null">class_no=#{classNo}</if>
+            <if test="classNo!=null">photo_url=#{photoUrl}</if>
+        </set>
+        WHERE wx_id=#{wxId}
+    </update>
+    <delete id="deleteAlum">
+        DELETE FROM tb_alum
+        WHERE wx_id=#{wxId}
+    </delete>
+</mapper>
