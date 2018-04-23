@@ -23,3 +23,4 @@ tb_alum(wx_id, alum_name, start_year,
 VALUES
 ("cyd", "陈禹东", 2014, "计算机系", "42班")
 ```
+###创建完所有实体类
