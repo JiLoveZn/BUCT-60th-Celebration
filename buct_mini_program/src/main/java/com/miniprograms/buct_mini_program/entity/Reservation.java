@@ -3,7 +3,7 @@ package com.miniprograms.buct_mini_program.entity;
 import java.util.Date;
 
 //预约信息
-public class ReservationInformation {
+public class Reservation {
     private String reId;//预约信息编号
     private String name;//姓名
     private Date backTime;//返校时间

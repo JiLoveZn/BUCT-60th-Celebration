@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miniprograms.buct_mini_program.dao.ReservationDao">
+    <select id="queryReservation" resultType="com.miniprograms.buct_mini_program.entity.Reservation">
+        SELECT re_id, my_name, back_time, back_mode, group_size, need_classroom,
+        need_teacher, teacher_name, principal, principal_phone
+        FROM tb_resv
+        ORDER BY re_id
+    </select>
+    <insert id="insertReservation" parameterType="com.miniprograms.buct_mini_program.entity.Reservation">
+        INSERT INTO
+        tb_resv(my_name, back_time, back_mode, group_size, need_classroom,
+        need_teacher, teacher_name, principal, principal_phone)
+        VALUES
+        (#{name}, #{backTime}, #{backMode}, #{groupSize}, #{needClassroom},
+        #{needTeacher}, #{teacherName}, #{principal}, #{principalPhone})
+    </insert>
+    <delete id="deleteReservation">
+        DELETE FROM tb_resv
+        WHERE re_id=#{reId}
+    </delete>
+</mapper>
