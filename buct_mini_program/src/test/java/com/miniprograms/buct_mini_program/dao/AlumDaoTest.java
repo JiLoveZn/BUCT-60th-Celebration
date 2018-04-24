@@ -1,7 +1,6 @@
 package com.miniprograms.buct_mini_program.dao;
 
 import com.miniprograms.buct_mini_program.entity.Alum;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +16,12 @@ public class AlumDaoTest {
     private AlumDao alumDao;
 
     @Test
-    @Ignore
     public void queryAlumByWxId() {
         Alum alum = alumDao.queryAlumByWxId("cyd");
         assertEquals("陈禹东", alum.getAlumName());
     }
 
     @Test
-    @Ignore
     public void insertAlum() {
         Alum alum = new Alum();
         alum.setWxId("ljg");
@@ -46,7 +43,6 @@ public class AlumDaoTest {
     }
 
     @Test
-    @Ignore
     public void deleteAlum() {
         int effectedNum = alumDao.deleteAlum("ljg");
         assertEquals(1, effectedNum);
