@@ -34,7 +34,7 @@ public interface AnnouncementService {
     boolean modifyAnnouncement(Announcement announcement);
 
     /**
-     * 通过微信Id删除公告信息
+     * 通过公告Id删除公告信息
      * @param anId
      * @return
      */

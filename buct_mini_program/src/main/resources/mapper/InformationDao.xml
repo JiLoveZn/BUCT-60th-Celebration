@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miniprograms.buct_mini_program.dao.InformationDao">
+    <select id="queryInformation" resultType="com.miniprograms.buct_mini_program.entity.Information">
+        SELECT in_id, title, create_date, author, content
+        FROM tb_info
+        ORDER BY in_id
+    </select>
+    <select id="queryInformationById" resultType="com.miniprograms.buct_mini_program.entity.Information">
+        SELECT title, create_date, author, content
+        FROM tb_info
+        WHERE
+        in_id=#{inId}
+    </select>
+    <insert id="insertInformation" parameterType="com.miniprograms.buct_mini_program.entity.Information">
+        INSERT INTO
+        tb_info(title, create_date, author, content)
+        VALUES
+        (#{title}, #{createDate}, #{author}, #{content})
+    </insert>
+    <update id="updateInformation" parameterType="com.miniprograms.buct_mini_program.entity.Information">
+        UPDATE tb_info
+        <set>
+            <if test="title!=null">title=#{title}</if>
+            <if test="author!=null">author=#{author}</if>
+            <if test="content!=null">content=#{content}</if>
+        </set>
+        WHERE in_id=#{inId}
+    </update>
+    <delete id="deleteInformation">
+        DELETE FROM tb_info
+        WHERE in_id=#{inId}
+    </delete>
+</mapper>

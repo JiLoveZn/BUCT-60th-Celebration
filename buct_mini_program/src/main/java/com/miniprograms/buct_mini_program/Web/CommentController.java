@@ -18,7 +18,7 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @RequestMapping(value = "/getcommentlist", method = RequestMethod.GET)
+    @RequestMapping(value = "/listcomment", method = RequestMethod.GET)
     private Map<String, Object> getComment() {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         List<Comment> commentList = commentService.getCommentList();
