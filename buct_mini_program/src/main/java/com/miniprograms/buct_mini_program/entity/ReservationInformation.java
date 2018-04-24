@@ -10,8 +10,8 @@ public class ReservationInformation {
     private String backMode;//返校方式
 
     private Integer groupSize;//团体返校人数
-    private Integer classroom;//是否需要教室
-    private Integer teacher;//是否需要教师
+    private Boolean needClassroom;//是否需要教室
+    private Boolean needTeacher;//是否需要教师
     private String teacherName;//联系教师姓名
     private String principal;//负责人
     private String principalPhone;//负责人电话
@@ -56,21 +56,13 @@ public class ReservationInformation {
         this.groupSize = groupSize;
     }
 
-    public Integer getClassroom() {
-        return classroom;
-    }
+    public Boolean getNeedClassroom() { return needClassroom; }
 
-    public void setClassroom(Integer classroom) {
-        this.classroom = classroom;
-    }
+    public void setNeedClassroom(Boolean needClassroom) { this.needClassroom = needClassroom; }
 
-    public Integer getTeacher() {
-        return teacher;
-    }
+    public Boolean getNeedTeacher() { return needTeacher; }
 
-    public void setTeacher(Integer teacher) {
-        this.teacher = teacher;
-    }
+    public void setNeedTeacher(Boolean needTeacher) { this.needTeacher = needTeacher; }
 
     public String getTeacherName() {
         return teacherName;
@@ -95,4 +87,5 @@ public class ReservationInformation {
     public void setPrincipalPhone(String principalPhone) {
         this.principalPhone = principalPhone;
     }
+
 }

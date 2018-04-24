@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miniprograms.buct_mini_program.dao.CommentDao">
+    <select id="queryComment" resultType="com.miniprograms.buct_mini_program.entity.Comment">
+        SELECT c_id, wx_id, content
+        FROM tb_comment
+        ORDER BY c_id
+    </select>
+    <insert id="insertComment" parameterType="com.miniprograms.buct_mini_program.entity.Comment">
+        INSERT INTO
+        tb_comment(wx_id, content)
+        VALUES
+        (#{wxId}, #{content})
+    </insert>
+    <delete id="deleteComment">
+        DELETE FROM tb_comment
+        WHERE c_id=#{cId}
+    </delete>
+</mapper>
