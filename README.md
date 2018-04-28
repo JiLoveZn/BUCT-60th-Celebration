@@ -60,10 +60,10 @@ INSERT INTO
 tb_info(title, author, content)
 VALUES
 ("资讯测试1", "cyd", "这是一条资讯。");
-/*--------ReservationInformation，预约信息类--------*/
+/*--------Reservation，预约信息类--------*/
 CREATE TABLE `tb_resv`(
   `re_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
+  `my_name` varchar(200) NOT NULL,
   `back_time` datetime NOT NULL,
   `back_mode` varchar(200) NOT NULL,
   `group_size` int(11) NOT NULL,
@@ -75,10 +75,65 @@ CREATE TABLE `tb_resv`(
   PRIMARY KEY (`re_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
 INSERT INTO
-tb_resv(name, back_time, back_mode, group_size, need_classroom,
+tb_resv(my_name, back_time, back_mode, group_size, need_classroom,
        need_teacher, teacher_name, principal, principal_phone)
 VALUES
 ("陈禹东", "2018-04-24 09:00:00", "校巴", 4, 0,
 1, "李华", "陈禹东", "18601234567");
 ```
-###创建完所有实体类
+###当前进度
+
+- 4月23日：创建完所有实体类
+- 4月24日：并完成Spring后端相应“增删改查”Dao-Service-Web层开发
+
+
+###Url接口与Json格式
+
+```json
+PREFIX = 域名+":"+端口+"/demo/superadmin/"
+
+/*================= Alum校友信息类 ==================*/
+/*注册个人信息（上传）*/
+url: PREFIX + "addalum"
+method: 'POST'
+data: {
+    "wxId": 微信Id(String),
+    "alumName": 校友姓名(String),
+    "startYear": 入学年份(Integer),
+    "department": 院系(String),
+    "classNo": 班级(String),
+}
+关于照片：上传照片文件（1~2张），存入后台固定路径下，后台负责将此路径存入photoUrl中，用';'分隔两个图片的url。
+
+/*修改个人信息（下载，获取原有信息）*/
+url: PREFIX + "getalumbywxid"
+method: 'GET'
+data: {
+    "wxId": 微信Id(String),
+}
+success: function(res) {
+    res.data.alum: {
+        "wxId": 微信Id(String),
+        "alumName": 校友姓名(String),
+        "startYear": 入学年份(Integer),
+        "department": 院系(String),
+        "classNo": 班级(String),
+        "photoUrl": 照片的url路径(String，两个url用';'分隔)
+    }
+}
+【TODO：修改信息界面的原有照片应该如何显示？】
+
+/*修改个人信息（上传）*/
+url: PREFIX + "modifyalum"
+method: 'POST'
+data: {
+    "wxId": 微信Id(String),
+    "alumName": 校友姓名(String),
+    "startYear": 入学年份(Integer),
+    "department": 院系(String),
+    "classNo": 班级(String),
+}
+关于照片：后台需要更新photoUrl。
+
+```
+
